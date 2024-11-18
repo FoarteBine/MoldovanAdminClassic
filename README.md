@@ -1,5 +1,3 @@
-### **README.md**
-
 # MoldovanAdmin - Advanced Roblox Administration Script
 
 Welcome to **MoldovanAdmin**, an advanced and feature-rich administration script designed exclusively for Roblox. This powerful local script empowers exploiters with a wide range of tools to enhance their experience, providing ultimate control and flexibility within their Roblox environment. 
