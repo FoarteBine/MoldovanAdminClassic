@@ -13,7 +13,7 @@ local DescriptionLabel = Instance.new("TextLabel")
 --Properties:
 
 MoldovanAdminGui.Name = "MoldovanAdminGui"
-MoldovanAdminGui.Parent = game.CoreGui
+MoldovanAdminGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 MoldovanAdminGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 MoldovanAdminGui.ResetOnSpawn = false
 
@@ -43,7 +43,7 @@ TextLabel.BorderSizePixel = 0
 TextLabel.Position = UDim2.new(0, 0, -0.230769232, 0)
 TextLabel.Size = UDim2.new(1, 0, 0.230769232, 0)
 TextLabel.Font = Enum.Font.SourceSans
-TextLabel.Text = "Moldovan Admin v0.1 by FoarteBine"
+TextLabel.Text = "Moldovan Admin v0.2 by FoarteBine"
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.TextSize = 14.000
 
@@ -72,7 +72,7 @@ DescriptionLabel.TextSize = 14.000
 
 -- Scripts:
 
-local function KCFZO_fake_script() -- Frame.BackgroundAnimation 
+local function VHSF_fake_script() -- Frame.BackgroundAnimation 
 	local script = Instance.new('LocalScript', Frame)
 
 	-- Local Script
@@ -108,8 +108,8 @@ local function KCFZO_fake_script() -- Frame.BackgroundAnimation
 	animateColor()
 	
 end
-coroutine.wrap(KCFZO_fake_script)()
-local function RYRGXGV_fake_script() -- Frame.ShowHide 
+coroutine.wrap(VHSF_fake_script)()
+local function MBXL_fake_script() -- Frame.ShowHide 
 	local script = Instance.new('LocalScript', Frame)
 
 	local gui = script.Parent.Parent
@@ -129,8 +129,8 @@ local function RYRGXGV_fake_script() -- Frame.ShowHide
 	
 	game:GetService("UserInputService").InputBegan:Connect(toggleEnabled)
 end
-coroutine.wrap(RYRGXGV_fake_script)()
-local function XREAKRL_fake_script() -- Frame.Main 
+coroutine.wrap(MBXL_fake_script)()
+local function XVMPVGW_fake_script() -- Frame.Main 
 	local script = Instance.new('LocalScript', Frame)
 
 	-- Local Script (вставьте в ScreenGui/TextBox)
@@ -203,6 +203,126 @@ local function XREAKRL_fake_script() -- Frame.Main
 			description = "Bring all players from server (CLIENT)",
 			event = function() loadstring(game:HttpGet("https://github.com/FoarteBine/MoldovanAdmin/raw/refs/heads/main/scripts/bringall.lua"))() end,
 			negativeEvent = nil -- Нет негативного события для этой команды
+		},
+		{
+			command = "speed",
+			aliases = {},
+			description = "Change your character speed",
+			event = function(value) game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").WalkSpeed = value end,
+			negativeEvent = nil -- Нет негативного события для этой команды
+		},
+		{
+			command = "jumppower",
+			aliases = {"jp"},
+			description = "Change your character jump power",
+			event = function(value) game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").UseJumpPower = true; game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").JumpPower = value end,
+			negativeEvent = nil -- Нет негативного события для этой команды
+		},
+		{
+			command = "infjump",
+			aliases = {"ij"},
+			description = "Enable infinity jump",
+			event = function() loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Infinite%20Jump.txt"))() end,
+			negativeEvent = nil -- Нет негативного события для этой команды
+		},
+		{
+			command = "aimbot",
+			aliases = {},
+			description = "Enable aim bot script",
+			event = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Exunys/AirHub/main/AirHub.lua"))() end,
+			negativeEvent = nil -- Нет негативного события для этой команды
+		},
+		{
+			command = "goto",
+			aliases = {},
+			description = "Goto player",
+			event = function(value)
+				local localPlayer = game.Players.LocalPlayer
+				local targetPlayer = nil
+	
+				-- Ищем игрока по частичному имени
+				for _, player in pairs(game.Players:GetPlayers()) do
+					if player.Name:lower():sub(1, #value) == value:lower() then
+						targetPlayer = player
+						break
+					end
+				end
+	
+				-- Проверяем, найден ли игрок
+				if targetPlayer and targetPlayer.Character and targetPlayer.Character:FindFirstChild("HumanoidRootPart") then
+					local localHRP = localPlayer.Character and localPlayer.Character:FindFirstChild("HumanoidRootPart")
+					local targetHRP = targetPlayer.Character:FindFirstChild("HumanoidRootPart")
+	
+					if localHRP then
+						localHRP.Position = targetHRP.Position -- Перемещаем игрока
+					else
+						warn("Local player does not have a HumanoidRootPart!")
+					end
+				else
+					warn("Player '" .. value .. "' not found or their character is missing!")
+				end
+			end,
+			negativeEvent = nil -- Нет негативного события для этой команды
+		},
+		{
+			command = "executor",
+			aliases = {"exe", "exec"},
+			description = "Run script executor",
+			event = function() _G.Options = {
+					["ToggleKey"] = "Insert",
+				}
+				loadstring(game:HttpGet(("https://raw.githubusercontent.com/VoidGaster/Scripts/main/" .. tostring(game.PlaceId)),true))() 
+			end,
+			negativeEvent = nil -- Нет негативного события для этой команды
+		},
+		{
+			command = "ssexecutor",
+			aliases = {"ss", "ssexec", "sse", "se"},
+			description = "Run server side executor",
+			event = function() loadstring(game:HttpGet("https://pastebin.com/raw/PXAdj6ED"))() end,
+			negativeEvent = nil -- Нет негативного события для этой команды
+		},
+		{
+			command = "clicktp",
+			aliases = {"ctp"},
+			description = "Teleport with Ctrl+Click",
+			event = function() loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Click%20Teleport.txt"))() end,
+			negativeEvent = nil -- Нет негативного события для этой команды
+		},
+		{
+			command = "clicktpbypass",
+			aliases = {"ctpb", "ctpt"},
+			description = "Teleport with Ctrl+Click bypass with tween service",
+			event = function() loadstring(game:HttpGet("https://github.com/FoarteBine/MoldovanAdmin/raw/refs/heads/main/scripts/clicktpbypass.lua"))() end,
+			negativeEvent = nil -- Нет негативного события для этой команды
+		},
+		{
+			command = "stalker",
+			aliases = {"stalk", "stlk"},
+			description = "Run universal stalker script",
+			event = function() loadstring(game:HttpGet("https://github.com/FoarteBine/MoldovanAdmin/raw/refs/heads/main/scripts/stalker.lua"))() end,
+			negativeEvent = nil -- Нет негативного события для этой команды
+		},
+		{
+			command = "flingplayer",
+			aliases = {"fplr", "fligplr"},
+			description = "Run fling player script",
+			event = function() loadstring(game:HttpGet("https://github.com/FoarteBine/MoldovanAdmin/raw/refs/heads/main/scripts/flingplayer.lua"))() end,
+			negativeEvent = nil -- Нет негативного события для этой команды
+		},
+		{
+			command = "fling",
+			aliases = {"flg", "flig"},
+			description = "Run fling script",
+			event = function() loadstring(game:HttpGet("https://github.com/FoarteBine/MoldovanAdmin/raw/refs/heads/main/scripts/fling.lua"))() end,
+			negativeEvent = nil -- Нет негативного события для этой команды
+		},
+		{
+			command = "esp",
+			aliases = {},
+			description = "Run esp script",
+			event = function() pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/ic3w0lf22/Unnamed-ESP/master/UnnamedESP.lua'))() end) end,
+			negativeEvent = nil -- Нет негативного события для этой команды
 		}
 	}
 	
@@ -211,14 +331,22 @@ local function XREAKRL_fake_script() -- Frame.Main
 	
 	-- Функция для выполнения команды
 	local function executeCommand(input)
-		local isNegative = string.sub(input, 1, 2) == "un" -- Проверяем, начинается ли команда с "un"
-		local cmdName = isNegative and string.sub(input, 3) or input -- Убираем "un" из команды
+		local args = {} -- Массив для параметров
+		for word in string.gmatch(input, "%S+") do
+			table.insert(args, word) -- Разделяем строку на аргументы
+		end
+	
+		local commandName = args[1] -- Первая часть - это команда
+		local param = args[2] -- Вторая часть - это параметр (если есть)
+	
 		for _, cmd in pairs(commands) do
-			if cmd.command == cmdName or table.find(cmd.aliases, cmdName) then
-				if isNegative and cmd.negativeEvent then
-					cmd.negativeEvent() -- Выполняем негативное событие, если оно есть
-				elseif not isNegative then
-					cmd.event() -- Выполняем основное событие
+			if cmd.command == commandName or table.find(cmd.aliases, commandName) then
+				-- Проверяем, если команда требует параметра
+				if param then
+					-- Если параметр есть, передаем его в команду
+					cmd.event(param)
+				else
+					cmd.event() -- Если параметра нет, просто выполняем команду
 				end
 				return true
 			end
@@ -312,7 +440,10 @@ local function XREAKRL_fake_script() -- Frame.Main
 		if property == "Text" then
 			updateSuggestions(textBox.Text)
 		end
+		if property == "Text" and textBox.Text == "" then
+			suggestionsFrame:ClearAllChildren()
+		end
 	end)
 	
 end
-coroutine.wrap(XREAKRL_fake_script)()
+coroutine.wrap(XVMPVGW_fake_script)()
