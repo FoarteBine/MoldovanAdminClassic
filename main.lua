@@ -145,21 +145,21 @@ local function XVMPVGW_fake_script() -- Frame.Main
 			command = "fly",
 			aliases = {"flying"},
 			description = "Makes your character fly",
-			event = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/FoarteBine/MoldovanAdmin/refs/heads/main/scripts/fly.lua", true))() end,
+			event = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/FoarteBine/MoldovanAdminClassic/refs/heads/main/scripts/fly.lua", true))() end,
 			negativeEvent = nil
 		},
 		{
 			command = "invisible",
 			aliases = {"inv", "vanish"},
 			description = "Makes your character invisible",
-			event = function() loadstring(game:HttpGet("https://github.com/FoarteBine/MoldovanAdmin/raw/refs/heads/main/scripts/invisible.lua", true))() end,
+			event = function() loadstring(game:HttpGet("https://github.com/FoarteBine/MoldovanAdminClassic/raw/refs/heads/main/scripts/invisible.lua", true))() end,
 			negativeEvent = nil -- Нет негативного события для этой команды
 		},
 		{
 			command = "noclip",
 			aliases = {},
 			description = "The character will be able to walk through walls",
-			event = function() loadstring(game:HttpGet("https://github.com/FoarteBine/MoldovanAdmin/raw/refs/heads/main/scripts/noclip.lua", true))() end,
+			event = function() loadstring(game:HttpGet("https://github.com/FoarteBine/MoldovanAdminClassic/raw/refs/heads/main/scripts/noclip.lua", true))() end,
 			negativeEvent = function() game.CoreGui:FindFirstChild("Noclip"):Remove() end
 		},
 		{
@@ -173,14 +173,14 @@ local function XVMPVGW_fake_script() -- Frame.Main
 			command = "hrpreject",
 			aliases = {"rehrp", "reh", "reject"},
 			description = "Reject HumanoidRootPart form character",
-			event = function() loadstring(game:HttpGet("https://github.com/FoarteBine/MoldovanAdmin/raw/refs/heads/main/scripts/hrpreject.lua"))() end,
+			event = function() loadstring(game:HttpGet("https://github.com/FoarteBine/MoldovanAdminClassic/raw/refs/heads/main/scripts/hrpreject.lua"))() end,
 			negativeEvent = nil -- Нет негативного события для этой команды
 		},
 		{
 			command = "rmpass",
 			aliases = {"removepass", "regm", "regp"},
 			description = "Disable gamepass but window",
-			event = function() loadstring(game:HttpGet("https://github.com/FoarteBine/MoldovanAdmin/raw/refs/heads/main/scripts/rmpass.lua"))() end,
+			event = function() loadstring(game:HttpGet("https://github.com/FoarteBine/MoldovanAdminClassic/raw/refs/heads/main/scripts/rmpass.lua"))() end,
 			negativeEvent = nil -- Нет негативного события для этой команды
 		},
 		{
@@ -194,14 +194,14 @@ local function XVMPVGW_fake_script() -- Frame.Main
 			command = "chatart",
 			aliases = {"c-art", "chart"},
 			description = "Script to make art in the chat",
-			event = function() loadstring(game:HttpGet("https://github.com/FoarteBine/MoldovanAdmin/raw/refs/heads/main/scripts/chatart.lua"))() end,
+			event = function() loadstring(game:HttpGet("https://github.com/FoarteBine/MoldovanAdminClassic/raw/refs/heads/main/scripts/chatart.lua"))() end,
 			negativeEvent = nil -- Нет негативного события для этой команды
 		},
 		{
 			command = "bringall",
 			aliases = {"c-art", "chart"},
 			description = "Bring all players from server (CLIENT)",
-			event = function() loadstring(game:HttpGet("https://github.com/FoarteBine/MoldovanAdmin/raw/refs/heads/main/scripts/bringall.lua"))() end,
+			event = function() loadstring(game:HttpGet("https://github.com/FoarteBine/MoldovanAdminClassic/raw/refs/heads/main/scripts/bringall.lua"))() end,
 			negativeEvent = nil -- Нет негативного события для этой команды
 		},
 		{
@@ -293,28 +293,28 @@ local function XVMPVGW_fake_script() -- Frame.Main
 			command = "clicktpbypass",
 			aliases = {"ctpb", "ctpt"},
 			description = "Teleport with Ctrl+Click bypass with tween service",
-			event = function() loadstring(game:HttpGet("https://github.com/FoarteBine/MoldovanAdmin/raw/refs/heads/main/scripts/clicktpbypass.lua"))() end,
+			event = function() loadstring(game:HttpGet("https://github.com/FoarteBine/MoldovanAdminClassic/raw/refs/heads/main/scripts/clicktpbypass.lua"))() end,
 			negativeEvent = nil -- Нет негативного события для этой команды
 		},
 		{
 			command = "stalker",
 			aliases = {"stalk", "stlk"},
 			description = "Run universal stalker script",
-			event = function() loadstring(game:HttpGet("https://github.com/FoarteBine/MoldovanAdmin/raw/refs/heads/main/scripts/stalker.lua"))() end,
+			event = function() loadstring(game:HttpGet("https://github.com/FoarteBine/MoldovanAdminClassic/raw/refs/heads/main/scripts/stalker.lua"))() end,
 			negativeEvent = nil -- Нет негативного события для этой команды
 		},
 		{
 			command = "flingplayer",
 			aliases = {"fplr", "fligplr"},
 			description = "Run fling player script",
-			event = function() loadstring(game:HttpGet("https://github.com/FoarteBine/MoldovanAdmin/raw/refs/heads/main/scripts/flingplayer.lua"))() end,
+			event = function() loadstring(game:HttpGet("https://github.com/FoarteBine/MoldovanAdminClassic/raw/refs/heads/main/scripts/flingplayer.lua"))() end,
 			negativeEvent = nil -- Нет негативного события для этой команды
 		},
 		{
 			command = "fling",
 			aliases = {"flg", "flig"},
 			description = "Run fling script",
-			event = function() loadstring(game:HttpGet("https://github.com/FoarteBine/MoldovanAdmin/raw/refs/heads/main/scripts/fling.lua"))() end,
+			event = function() loadstring(game:HttpGet("https://github.com/FoarteBine/MoldovanAdminClassic/raw/refs/heads/main/scripts/fling.lua"))() end,
 			negativeEvent = nil -- Нет негативного события для этой команды
 		},
 		{
