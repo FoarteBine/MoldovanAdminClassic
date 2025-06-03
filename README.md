@@ -34,7 +34,7 @@ To get started with MoldovanAdmin, follow these simple steps:
 2. Copy the following one-liner execution command:
 
    ```lua
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/FoarteBine/MoldovanAdmin/refs/heads/main/main.lua", true))()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/FoarteBine/MoldovanAdminClassic/refs/heads/main/main.lua", true))()
    ```
 
 3. Paste the command into your exploit’s script executor.
